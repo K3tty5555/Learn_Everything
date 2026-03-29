@@ -1,0 +1,62 @@
+# Sensitive files
+.env
+.env.*
+*.key
+*.pem
+credentials.*
+secrets.*
+
+# API keys and config that may contain them
+**/api_key*
+**/apikey*
+**/*secret*
+**/*token*
+
+# baoyu-skills runtime config (may contain API keys)
+.baoyu-skills/.env
+.baoyu-skills/**/EXTEND.md
+
+# User learning data (personal, not for sharing)
+domains/*/published/
+domains/*/assets/
+domains/*/papers/
+domains/*/concepts/
+domains/*/qa/
+domains/*/*.py
+domains/*/*.docx
+domains/*/skeleton.md
+domains/*/researchers.md
+domains/*/learning-path.md
+domains/*/cheatsheet*.md
+domains/*/meta.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Build artifacts (minimax-docx .NET)
+**/bin/
+**/obj/
+*.user
+
+# Playwright MCP logs
+.playwright-mcp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Infographic intermediate files (regeneratable)
+**/infographic/**/generate_infographic.py
+**/infographic/**/infographic.html
+
+# Memory (user-specific, not for sharing)
+.claude/projects/
