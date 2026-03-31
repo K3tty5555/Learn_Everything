@@ -39,6 +39,9 @@ domains/*/assets/
 domains/*/*.py
 domains/*/*.docx
 
+# Design docs (local only)
+docs/
+
 # OS files
 .DS_Store
 Thumbs.db
