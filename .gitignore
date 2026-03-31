@@ -67,8 +67,8 @@ __pycache__/
 *.pyo
 
 # Infographic intermediate files (regeneratable)
-**/infographic/**/generate_infographic.py
-**/infographic/**/infographic.html
+infographic/
+domains/**/infographic/
 
 # Memory (user-specific, not for sharing)
 .claude/projects/
