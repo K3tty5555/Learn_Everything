@@ -17,18 +17,27 @@ secrets.*
 .baoyu-skills/**/EXTEND.md
 
 # User learning data (personal, not for sharing)
-domains/*/published/
-domains/*/assets/
-domains/*/papers/
-domains/*/concepts/
-domains/*/qa/
-domains/*/*.py
-domains/*/*.docx
+# Phase 1 outputs
 domains/*/skeleton.md
 domains/*/researchers.md
+domains/*/curriculum.md
+domains/*/sources.md
+domains/*/meta.md
+# Phase 2 outputs
+domains/*/papers/
+domains/*/concepts/
+domains/*/modules/
+# Phase 4 outputs
 domains/*/learning-path.md
 domains/*/cheatsheet*.md
-domains/*/meta.md
+# Phase 3 outputs
+domains/*/qa/
+# Phase 5 outputs
+domains/*/published/
+domains/*/assets/
+# Misc
+domains/*/*.py
+domains/*/*.docx
 
 # OS files
 .DS_Store
