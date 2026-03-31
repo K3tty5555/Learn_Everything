@@ -4,8 +4,8 @@ A systematic domain learning system powered by Claude Code.
 
 ## Methodology
 
-1. **Knowledge Skeleton** - Find top 3-5 researchers + 10 most-cited papers to map the field
-2. **Knowledge Base** - Structured paper notes with full source attribution, zero hallucination tolerance
+1. **Knowledge Skeleton** - 判断领域知识形态（学术/实践/技术文档/混合），设计 8-12 个学习模块，按类型发现来源（论文/书籍/博客/官方文档）
+2. **Knowledge Base** - 以模块为单位并行构建完整学习文档（1500-3000字/模块），来源是证据而非结构主体，zero hallucination tolerance
 3. **Adversarial Learning** - Multi-agent critical questioning to fill blind spots
 4. **Learning Path** - Layered roadmap from foundation to frontier
 
@@ -14,6 +14,9 @@ A systematic domain learning system powered by Claude Code.
 - All knowledge is organized under `domains/{domain-slug}/`
 - **Domain Isolation**: When working on domain X, ONLY access files in `domains/{x}/` and `templates/`. Never read other domain directories.
 - `domains/index.md` is a lightweight registry (one line per domain). It is the ONLY cross-domain file.
+- `domains/{slug}/curriculum.md` — P1 产出：课程大纲、模块清单、知识形态分类
+- `domains/{slug}/sources.md` — P1 产出：按学术/实践/技术文档分类的来源清单（含 source→module 映射）
+- `domains/{slug}/modules/` — P2 核心产出：模块化学习文档（每模块 1500-3000 字，含实战场景和决策框架）
 - Every factual claim must carry a source annotation: `[Source: Author et al., Year, Section/Page]`
 - Unverified information must be marked `[Unverified]`
 - Templates in `templates/` are shared and read-only references
