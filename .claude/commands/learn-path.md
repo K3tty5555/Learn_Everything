@@ -13,7 +13,7 @@ Produce a layered, actionable learning roadmap customized to the user's existing
 ## Step 1: Verify & Load
 
 1. Read `domains/{slug}/meta.md` — at least Phase 1 must be complete (Phase 2+3 recommended)
-2. Read ALL domain files: skeleton, researchers, paper notes, concepts, QA logs
+2. 读取 `domains/{slug}/curriculum.md`、`domains/{slug}/sources.md`、`domains/{slug}/modules/` 下所有模块文件、`domains/{slug}/qa/` 日志（如有）
 
 **ISOLATION RULE**: Only access `domains/{slug}/` and `templates/`.
 
@@ -47,6 +47,7 @@ Each level includes:
 - 需要掌握的关键概念
 - 与学习者实际工作关联的实践练习
 - 里程碑（checkbox）用于追踪进度
+- **模块链接**：每个学习步骤直接链接到 `modules/XX-xxx.md` 对应文件（用 Markdown 链接格式）
 
 Include a **recommended starting point** — don't always start at Level 1 if the user has prior knowledge.
 
