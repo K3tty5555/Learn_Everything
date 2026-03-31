@@ -13,8 +13,8 @@ Use multi-perspective critical questioning to identify and fill knowledge gaps. 
 ## Step 1: Verify & Load
 
 1. Read `domains/{slug}/meta.md` — Phase 2 must be complete
-2. Read `skeleton.md` and `researchers.md`
-3. Scan all files in `papers/` and `concepts/` to compile key findings
+2. 读取 `domains/{slug}/curriculum.md` — 获取模块清单
+3. 读取 `domains/{slug}/modules/` 下所有模块文件，编译各模块的核心内容摘要
 
 **ISOLATION RULE**: Only access `domains/{slug}/` and `templates/`.
 
@@ -39,6 +39,7 @@ Present the personas to the user and ask if they'd like to adjust.
   2. **Blind Spots** — topics completely absent that matter
   3. **Challenged Assumptions** — claims that are oversimplified or misleading
   4. **2-3 Missing Resources** — papers/books that should be added
+  - 输出盲点时必须标明「属于哪个模块」（参考 curriculum.md 中的模块编号）
 
 ## Step 4: Synthesize & Research
 
@@ -46,7 +47,7 @@ After all agents return:
 1. Compile a consolidated blind spot map with severity ratings (Critical/High/Medium)
 2. For each critical/high blind spot:
    - Use WebSearch to research the gap
-   - Create new concept files in `domains/{slug}/concepts/` with sourced content
+   - 将新发现的内容**直接补充到 `domains/{slug}/modules/` 中对应模块文件的相关小节**，并标注来源
 3. Update `skeleton.md` — fix concept dependency map, add new open problems
 
 ## Step 5: Save & Present
