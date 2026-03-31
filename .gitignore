@@ -60,3 +60,6 @@ __pycache__/
 
 # Memory (user-specific, not for sharing)
 .claude/projects/
+
+# Generated XHS images (local output, not for sharing)
+xhs-images/
