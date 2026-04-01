@@ -56,18 +56,23 @@ This rule applies across ALL skills in this project, not just learn-publish.
 
 ## Bundled Skills
 
-The following external skills are bundled in `.claude/skills/` for self-contained distribution:
+The following skill is bundled in `.claude/skills/` for self-contained distribution:
 
 | Skill | Purpose | Source |
 |-------|---------|--------|
 | `minimax-docx` | DOCX generation with OpenXML (tables, CJK typography, design principles) | MiniMaxSkills |
-| `baoyu-infographic` | Infographic image generation (21 layouts, 20 styles) | baoyu-skills |
-| `baoyu-image-gen` | AI image generation backend (OpenAI, Google, DashScope, MiniMax, Replicate, etc.) | baoyu-skills |
-| `Humanizer-zh` | De-AI text processing (remove AI writing patterns) | baoyu-skills |
 
-These skills are invoked by name during `/learn-publish`. No external installation required.
+## User-Level Skills (Required)
 
-**Image generation setup**: `baoyu-image-gen` needs an API key for at least one image provider. On first use, the skill will guide users through provider selection and API key configuration. Keys are stored in environment variables or `~/.baoyu-skills/.env` (never committed to git).
+The following skills must be installed at user level (`~/.claude/skills/`) and are shared across projects:
+
+| Skill | Purpose |
+|-------|---------|
+| `baoyu-infographic` | Infographic image generation (21 layouts, 20 styles) |
+| `baoyu-image-gen` | AI image generation backend (OpenAI, Google, DashScope, MiniMax, Replicate, etc.) |
+| `Humanizer-zh` | De-AI text processing (remove AI writing patterns) |
+
+**Image generation setup**: `baoyu-image-gen` needs an API key for at least one image provider. Keys are stored in `~/.baoyu-skills/.env` (never committed to git).
 
 ## File Naming
 

@@ -79,8 +79,8 @@ Options:
 
 For confirmed images only, launch parallel agents:
 
-- Use `baoyu-infographic` for structured data (frameworks, matrices, hierarchies)
-- Use `baoyu-image-gen` for conceptual illustrations
+- Use `baoyu-infographic` (user-level skill) for structured data (frameworks, matrices, hierarchies)
+- Use `baoyu-image-gen` (user-level skill) for conceptual illustrations
 - Each agent saves to `domains/{slug}/assets/` (**not** inside `published/`)
 
 All image agents can run in parallel since they're independent.
