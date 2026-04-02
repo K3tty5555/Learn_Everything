@@ -12,6 +12,21 @@ Convert MD knowledge base files into publishable formats:
 - **DOCX** → import into Feishu for multi-device reading
 - **Slides** → for team knowledge sharing
 
+## Pre-check: Illustration Coverage
+
+Before publishing, check if images are in place:
+
+```
+💡 配图检查：domains/{slug}/assets/manifest.md 当前覆盖了多少模块？
+   - 若有模块缺少配图，建议先运行 `/learn-illustrate {topic}`
+   - 图片通过 manifest.md 自动嵌入 DOCX，不需要手动插入
+   - 可以跳过：若本次只需要文字版 DOCX
+```
+
+Ask the user: "是否先补充配图？（Y = 先运行 /learn-illustrate / N = 直接发布）"
+
+---
+
 ## Step 1: Verify & Inventory
 
 1. Read `domains/{slug}/meta.md`

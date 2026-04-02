@@ -29,6 +29,7 @@ A systematic domain learning system powered by Claude Code.
 **After adding a new module**, also remind the user to:
 1. Update `learning-path.md` to include the new module
 2. Regenerate `published/00-学习路径（先读这个）.docx`
+3. Run `/learn-illustrate {domain}` to add visual aids to the new module (before next `/learn-publish`)
 
 **Image assets** are stored in `domains/{slug}/assets/` with a manifest at `domains/{slug}/assets/manifest.md`.
 The batch conversion script reads `manifest.md` to embed images into the correct DOCX sections automatically.
@@ -72,7 +73,8 @@ This rule applies across ALL skills in this project, not just learn-publish.
 | `/learn-kb {topic}` | Phase 2: Build sourced knowledge base (parallel) |
 | `/learn-challenge {topic}` | Phase 3: Multi-expert adversarial Q&A (parallel) |
 | `/learn-path {topic}` | Phase 4: Personalized learning path |
-| `/learn-publish {topic}` | Phase 5: Export to DOCX/slides with images |
+| `/learn-illustrate {topic}` | Phase 5a: Add baoyu-powered visual aids to modules (runs before publish) |
+| `/learn-publish {topic}` | Phase 5b: Export to DOCX/slides with images |
 | `/learn-quiz {topic}` | Test your understanding with generated quizzes |
 | `/learn-tutor {topic}` | Socratic tutor mode (Feynman technique) |
 

@@ -308,6 +308,14 @@ def embed_images(doc: Document, para_index: list[tuple[str, object]],
             print(f'  [WARN] 图片不存在: {img_path}')
             continue
 
+        # 格式完整性检查：.png 扩展名但内容不是 PNG（常见于 Seedream/MiniMax JPEG 输出）
+        if filename.lower().endswith('.png'):
+            magic = img_path.read_bytes()[:4]
+            if magic != b'\x89PNG':
+                print(f'  [ERROR] {filename} 扩展名为 .png 但内容不是 PNG（magic: {magic.hex()}）。'
+                      f'请先运行格式转换再重试。跳过此图片。')
+                continue
+
         # 找到关键词所在的段落
         target_para = None
         for text, p in para_index:
@@ -317,7 +325,9 @@ def embed_images(doc: Document, para_index: list[tuple[str, object]],
 
         if target_para is None:
             # 找不到关键词，插在文档末尾
-            print(f'  [WARN] 未找到插入关键词"{keyword}"，图片 {filename} 插入文档末尾')
+            print(f'  [ERROR] 未找到关键词 "{keyword}"（模块: {module_stem}）。'
+                  f'图片 {filename} 未插入——请检查 manifest 关键词是否与 MD 原文一致。')
+            continue
 
         # 在目标段落后插入图片段落
         try:

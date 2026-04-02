@@ -88,4 +88,6 @@ description: "Phase 2 of Learn Everything: Build comprehensive learning modules 
    - 已构建模块数及列表
    - 各模块来源类型覆盖情况
    - 需要用户补充 PDF 才能提升质量的来源（如有）
-4. 建议："准备好进入 Phase 3 深度挑战了吗？运行 `/learn-challenge {topic}`"
+4. 建议：
+   - "准备好进入 Phase 3 深度挑战了吗？运行 `/learn-challenge {topic}`"
+   - "想为模块添加高质量配图？运行 `/learn-illustrate {topic}`（在 `/learn-publish` 之前跑，图片会自动嵌入 DOCX）"
