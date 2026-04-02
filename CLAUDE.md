@@ -21,6 +21,28 @@ A systematic domain learning system powered by Claude Code.
 - Unverified information must be marked `[Unverified]`
 - Templates in `templates/` are shared and read-only references
 
+### Module Sync Rules
+
+**After editing any module MD file**, immediately remind the user:
+> "MD 已更新，是否同步更新对应的 DOCX？运行 `python3 scripts/md_to_docx.py` 可批量重生成所有模块。"
+
+**After adding a new module**, also remind the user to:
+1. Update `learning-path.md` to include the new module
+2. Regenerate `published/00-学习路径（先读这个）.docx`
+
+**Image assets** are stored in `domains/{slug}/assets/` with a manifest at `domains/{slug}/assets/manifest.md`.
+The batch conversion script reads `manifest.md` to embed images into the correct DOCX sections automatically.
+
+### External Materials Intake
+
+When the user brings external materials (source code, papers, articles, videos) for learning:
+
+1. **Assess usability** — note the source type and any usage constraints in the module's `## 来源` section
+2. **Map to module** — determine if it enriches an existing module or warrants a new one
+3. **Write/update the MD** — add content with `[Source: ...]` annotations; mark unverified claims
+4. **Sync DOCX** — regenerate the affected DOCX file(s)
+5. **Update learning-path.md** if a new module was added
+
 ## Content Language — Chinese First
 
 All generated content (MD files, DOCX content, headings, section titles) MUST use **Chinese as the primary language**. This applies to every phase (skeleton, KB, learning path, publish).
@@ -80,3 +102,19 @@ The following skills must be installed at user level (`~/.claude/skills/`) and a
 - Paper slugs: `{first-author-year}` (e.g., `vaswani-2017`)
 - Concept files: lowercase, hyphens (e.g., `attention-mechanism.md`)
 - QA logs: `{YYYY-MM-DD}.md`
+
+## Tooling & Environment
+
+### DOCX Generation Pipeline
+
+**Primary**: minimax-docx skill (uses .NET 10 SDK via OpenXML — produces rich formatting)
+**Fallback**: `scripts/md_to_docx.py` (uses python-docx — basic formatting, always available)
+
+**dotnet binary path**: `/usr/local/share/dotnet/dotnet`
+**PATH fix** (if `dotnet` not found in session): `export PATH="$PATH:/usr/local/share/dotnet"`
+This path is already written to `~/.zshrc` — new terminals will find it automatically.
+
+### Git Remote
+
+Remote is configured as HTTPS (not SSH) to avoid port 22 timeout issues:
+`https://github.com/K3tty5555/Learn_Everything.git`
