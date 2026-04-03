@@ -75,3 +75,6 @@ domains/**/infographic/
 
 # Generated XHS images (local output, not for sharing)
 xhs-images/
+
+# Knowledge comics (personal content, not for sharing)
+comic/
