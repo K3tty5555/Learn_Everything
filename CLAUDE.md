@@ -74,7 +74,8 @@ This rule applies across ALL skills in this project, not just learn-publish.
 | `/learn-challenge {topic}` | Phase 3: Multi-expert adversarial Q&A (parallel) |
 | `/learn-path {topic}` | Phase 4: Personalized learning path |
 | `/learn-illustrate {topic}` | Phase 5a: Add baoyu-powered visual aids to modules (runs before publish) |
-| `/learn-publish {topic}` | Phase 5b: Export to DOCX/slides with images |
+| `/learn-comic {topic}` | Phase 5b: Convert modules into Doraemon-style knowledge comics (via baoyu-comic) |
+| `/learn-publish {topic}` | Phase 5c: Export to DOCX/slides with images |
 | `/learn-quiz {topic}` | Test your understanding with generated quizzes |
 | `/learn-tutor {topic}` | Socratic tutor mode (Feynman technique) |
 
